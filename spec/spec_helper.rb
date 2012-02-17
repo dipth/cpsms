@@ -20,5 +20,5 @@ VCR.config do |c|
   c.stub_with :webmock
   c.filter_sensitive_data('username=<USERNAME>')       { "username=#{ENV['CPSMS_USERNAME']}" }
   c.filter_sensitive_data('password=<PASSWORD>')       { "password=#{ENV['CPSMS_PASSWORD']}" }
-  c.filter_sensitive_data('recipient=<MOBILE_NUMBER>') { "password=#{ENV['CPSMS_MOBILE_NUMBER']}" }
+  c.filter_sensitive_data('recipient=<MOBILE_NUMBER>') { "recipient=#{ENV['CPSMS_MOBILE_NUMBER']}" }
 end
