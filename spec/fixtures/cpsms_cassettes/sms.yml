@@ -1,0 +1,70 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://www.cpsms.dk:443/sms/
+    body: username=wrong&password=wrong&recipient=12345678&message=test
+    headers: 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 17 Feb 2012 17:11:39 GMT
+      server:
+      - Apache/2.2.14 (EL)
+      x-powered-by:
+      - PHP/5.2.11
+      content-length:
+      - '40'
+      content-type:
+      - text/html
+    body: <error>Invalid username/password</error>
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://www.cpsms.dk:443/sms/
+    body: username=<USERNAME>&password=<PASSWORD>&recipient=<MOBILE_NUMBER>&message=test
+    headers: 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 17 Feb 2012 17:11:40 GMT
+      server:
+      - Apache/2.2.14 (EL)
+      x-powered-by:
+      - PHP/5.2.11
+      content-length:
+      - '55'
+      content-type:
+      - text/html
+    body: <succes>SMS succesfully sent to 1 recipient(s)</succes>
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://www.cpsms.dk:443/sms/
+    body: username=<USERNAME>&password=<PASSWORD>&recipient=12345678&message=test
+    headers: 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 17 Feb 2012 17:11:40 GMT
+      server:
+      - Apache/2.2.14 (EL)
+      x-powered-by:
+      - PHP/5.2.11
+      content-length:
+      - '55'
+      content-type:
+      - text/html
+    body: <succes>SMS succesfully sent to 0 recipient(s)</succes>
+    http_version: '1.1'

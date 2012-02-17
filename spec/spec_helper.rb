@@ -18,7 +18,7 @@ end
 VCR.config do |c|
   c.cassette_library_dir = 'spec/fixtures/cpsms_cassettes'
   c.stub_with :webmock
-  c.filter_sensitive_data('username=<USERNAME>')       { "username=#{ENV['CPSMS_USERNAME']}" }
-  c.filter_sensitive_data('password=<PASSWORD>')       { "password=#{ENV['CPSMS_PASSWORD']}" }
-  c.filter_sensitive_data('recipient=<MOBILE_NUMBER>') { "recipient=#{ENV['CPSMS_MOBILE_NUMBER']}" }
+  c.filter_sensitive_data('username=<USERNAME>')       { "username=#{ ENV.fetch('CPSMS_USERNAME', 'fake-cpsms-username') }" }
+  c.filter_sensitive_data('password=<PASSWORD>')       { "password=#{ ENV.fetch('CPSMS_PASSWORD', 'fake-cpsms-password') }" }
+  c.filter_sensitive_data('recipient=<MOBILE_NUMBER>') { "recipient=#{ ENV.fetch('CPSMS_MOBILE_NUMBER', 'fake-cpsms-mobile-number') }" }
 end

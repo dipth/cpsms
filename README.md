@@ -41,7 +41,7 @@ You can pass a hash of optional options to the method. The possible options and 
 
 # Testing
 
-To run the tests you need to set your cpsms.dk credentials and a valid mobile number as environment variables.
+To create new tests or edit existing you need to set your cpsms.dk credentials and a valid mobile number as environment variables.
 
 More specifically you need to set these three environment variables with their respective values:
 
@@ -58,3 +58,5 @@ If you're using RVM, you can copy the supplied ```.rvmrc_example``` file to ```.
 **Please note:** Your mobile number must be prepended with the country-code, for instance: 4512345678 for a danish number (45).
 
 By doing this, the variables will automatically be set when RVM sets the environment.
+
+If you just wish to run the existing test suite, you don't need to set these values, as VCR will simply use existing recordings for communication with the API.
