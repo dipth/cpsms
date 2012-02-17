@@ -1,0 +1,38 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.2.7)
+    ansi (1.4.2)
+    crack (0.3.1)
+    ffi (1.0.11)
+    guard (0.10.0)
+      ffi (>= 0.5.0)
+      thor (~> 0.14.6)
+    guard-minitest (0.4.0)
+      guard (~> 0.4)
+    httparty (0.8.1)
+      multi_json
+      multi_xml
+    libxml-ruby (2.2.2)
+    multi_json (1.0.4)
+    multi_xml (0.4.1)
+    rake (0.9.2.2)
+    thor (0.14.6)
+    turn (0.9.2)
+      ansi
+    vcr (1.11.3)
+    webmock (1.7.10)
+      addressable (~> 2.2, > 2.2.5)
+      crack (>= 0.1.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  guard-minitest
+  httparty
+  libxml-ruby
+  rake
+  turn
+  vcr
+  webmock

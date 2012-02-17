@@ -1,0 +1,3 @@
+rvm --create 1.9.3@cpsms
+export CPSMS_USERNAME=YourUsername
+export CPSMS_PASSWORD=YourPassword
