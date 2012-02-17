@@ -38,6 +38,8 @@ module CPSMS
       case success
       when 'SMS succesfully sent to 0 recipient(s)'
         raise InvalidRecipientError
+      when 'SMS succesfully sent to 1 recipient(s)'
+        true
       end
     end
 

@@ -40,6 +40,14 @@ describe CPSMS::SMS do
           end.must_raise CPSMS::InvalidRecipientError
         end
       end
+
+      describe "and a valid recipient" do
+        it "returns true" do
+          CPSMS::SMS.send!(ENV['CPSMS_USERNAME'],
+                           ENV['CPSMS_PASSWORD'],
+                           ENV['CPSMS_MOBILE_NUMBER']).must_equal true
+        end
+      end
     end
   end
 
