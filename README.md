@@ -41,16 +41,20 @@ You can pass a hash of optional options to the method. The possible options and 
 
 # Testing
 
-To run the tests you need to set your cpsms.dk credentials as environment variables.
+To run the tests you need to set your cpsms.dk credentials and a valid mobile number as environment variables.
 
-More specifically you need to set these two environment variables with their respective values:
+More specifically you need to set these three environment variables with their respective values:
 
 * CPSMS_USERNAME
 * CPSMS_PASSWORD
+* CPSMS_MOBILE_NUMBER
 
 If you're using RVM, you can copy the supplied ```.rvmrc_example``` file to ```.rvmrc``` and edit the last two lines with your credentials
 
     export CPSMS_USERNAME=YourUsername
     export CPSMS_PASSWORD=YourPassword
+    export CPSMS_MOBILE_NUMBER=YourMobileNumber
+
+**Please note:** Your mobile number must be prepended with the country-code, for instance: 4512345678 for a danish number (45).
 
 By doing this, the variables will automatically be set when RVM sets the environment.
