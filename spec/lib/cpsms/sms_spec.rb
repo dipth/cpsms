@@ -2,6 +2,10 @@ require(File.expand_path('./../../../spec_helper', __FILE__))
 
 describe CPSMS::SMS do
 
+  let(:username)  { ENV.fetch('CPSMS_USERNAME', 'fake-cpsms-username') }
+  let(:password)  { ENV.fetch('CPSMS_PASSWORD', 'fake-cpsms-password') }
+  let(:recipient) { ENV.fetch('CPSMS_MOBILE_NUMBER', 'fake-cpsms-mobile-number') }
+
   describe "default attributes" do
     it "must include httparty methods" do
       CPSMS::SMS.must_include HTTParty
@@ -36,16 +40,14 @@ describe CPSMS::SMS do
       describe "and invalid recipient" do
         it "raises a CPSMS::InvalidRecipientError" do
           proc do
-            CPSMS::SMS.send!(ENV['CPSMS_USERNAME'], ENV['CPSMS_PASSWORD'], 12345678)
+            CPSMS::SMS.send!(username, password, 12345678)
           end.must_raise CPSMS::InvalidRecipientError
         end
       end
 
       describe "and a valid recipient" do
         it "returns true" do
-          CPSMS::SMS.send!(ENV['CPSMS_USERNAME'],
-                           ENV['CPSMS_PASSWORD'],
-                           ENV['CPSMS_MOBILE_NUMBER']).must_equal true
+          CPSMS::SMS.send!(username, password, recipient).must_equal true
         end
       end
     end
