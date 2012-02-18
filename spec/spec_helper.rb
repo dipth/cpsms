@@ -15,7 +15,7 @@ Turn.config do |c|
 end
 
 #VCR config
-VCR.config do |c|
+VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/cpsms_cassettes'
   c.stub_with :webmock
   c.filter_sensitive_data('username=<USERNAME>')       { "username=#{ ENV.fetch('CPSMS_USERNAME', 'fake-cpsms-username') }" }
