@@ -4,6 +4,8 @@ A wrapper for the cpsms.dk API.
 
 It will allow you to easily send SMS messages through the API from your Ruby applications.
 
+[![Build Status](https://secure.travis-ci.org/dipth/cpsms.png?branch=master)](http://travis-ci.org/dipth/cpsms)
+
 # Prerequisites
 
 To use the API you need to have an account on cpsms.dk
