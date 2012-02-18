@@ -1,7 +1,9 @@
 source :rubygems
 
 gem 'httparty'
-gem 'libxml-ruby'
+gem 'libxml-ruby', :platforms => [:ruby]
+gem 'libxml-jruby', :platforms => [:jruby]
+gem 'jruby-openssl', :platforms => [:jruby]
 
 group :test do
   gem 'minitest'

@@ -3,8 +3,10 @@ GEM
   specs:
     addressable (2.2.7)
     ansi (1.4.2)
+    bouncy-castle-java (1.5.0146.1)
     crack (0.3.1)
     ffi (1.0.11)
+    ffi (1.0.11-java)
     guard (0.10.0)
       ffi (>= 0.5.0)
       thor (~> 0.14.6)
@@ -13,6 +15,9 @@ GEM
     httparty (0.8.1)
       multi_json
       multi_xml
+    jruby-openssl (0.7.6.1)
+      bouncy-castle-java (>= 1.5.0146.1)
+    libxml-jruby (1.0.0)
     libxml-ruby (2.2.2)
     minitest (2.11.2)
     multi_json (1.0.4)
@@ -27,11 +32,14 @@ GEM
       crack (>= 0.1.7)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
   guard-minitest
   httparty
+  jruby-openssl
+  libxml-jruby
   libxml-ruby
   minitest
   rake
