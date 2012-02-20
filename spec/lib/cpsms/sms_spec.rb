@@ -31,7 +31,7 @@ describe CPSMS::SMS do
     describe "with invalid credentials" do
       it "raises a CPSMS::InvalidCredentialsError" do
         proc do
-          CPSMS::SMS.send!("wrong", "wrong", 12345678)
+          CPSMS::SMS.send!("wrong", "wrong", recipient, "test")
         end.must_raise CPSMS::InvalidCredentialsError
       end
     end
