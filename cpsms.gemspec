@@ -20,12 +20,12 @@ Gem::Specification.new do |s|
 
   s.add_dependency('httparty',      '~> 0.8.1')
 
-  case s.platform.to_s
-  when 'ruby'
-    s.add_dependency('libxml-ruby',   '~> 2.2.2')
-  when 'jruby'
+  case RUBY_PLATFORM
+  when 'java'
     s.add_dependency('libxml-jruby',  '~> 1.0.0')
     s.add_dependency('jruby-openssl', '~> 0.7.6')
+  else
+    s.add_dependency('libxml-ruby',   '~> 2.2.2')
   end
 
   s.add_development_dependency('minitest',       '~> 2.11.2')
