@@ -40,14 +40,14 @@ describe CPSMS::SMS do
       describe "and invalid recipient" do
         it "raises a CPSMS::InvalidRecipientError" do
           proc do
-            CPSMS::SMS.send!(username, password, 12345678)
+            CPSMS::SMS.send!(username, password, 12345678, "test")
           end.must_raise CPSMS::InvalidRecipientError
         end
       end
 
       describe "and a valid recipient" do
         it "returns true" do
-          CPSMS::SMS.send!(username, password, recipient).must_equal true
+          CPSMS::SMS.send!(username, password, recipient, "test").must_equal true
         end
       end
     end
