@@ -1,9 +1,15 @@
+PATH
+  remote: .
+  specs:
+    cpsms (0.1.1)
+      httparty (~> 0.8.1)
+      libxml-ruby (~> 2.2.2)
+
 GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.2.7)
     ansi (1.4.2)
-    bouncy-castle-java (1.5.0146.1)
     crack (0.3.1)
     ffi (1.0.11)
     ffi (1.0.11-java)
@@ -15,16 +21,13 @@ GEM
     httparty (0.8.1)
       multi_json
       multi_xml
-    jruby-openssl (0.7.6.1)
-      bouncy-castle-java (>= 1.5.0146.1)
-    libxml-jruby (1.0.0)
     libxml-ruby (2.2.2)
     minitest (2.11.2)
-    multi_json (1.0.4)
+    multi_json (1.1.0)
     multi_xml (0.4.1)
     rake (0.9.2.2)
     thor (0.14.6)
-    turn (0.9.2)
+    turn (0.9.3)
       ansi
     vcr (2.0.0.rc1)
     webmock (1.7.10)
@@ -36,13 +39,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  guard-minitest
-  httparty
-  jruby-openssl
-  libxml-jruby
-  libxml-ruby
-  minitest
-  rake
-  turn
+  cpsms!
+  guard-minitest (~> 0.4.0)
+  minitest (~> 2.11.2)
+  rake (~> 0.9.2)
+  turn (~> 0.9.3)
   vcr (~> 2.0.0.rc1)
-  webmock
+  webmock (~> 1.7.10)
