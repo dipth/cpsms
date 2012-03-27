@@ -7,11 +7,13 @@ module CPSMS
 
     base_uri 'https://www.cpsms.dk'
 
-    def self.send!(username, password, recipient, message)
+    def self.send!(username, password, recipient, message, options = {})
       body = { :username => username,
                :password => password,
                :recipient => recipient,
                :message => message }
+
+      body[:sender] = options[:sender] if options[:sender]
       parse_response self.post('/sms/', :body => body).body
     end
 

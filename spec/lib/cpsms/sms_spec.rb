@@ -1,4 +1,5 @@
 require(File.expand_path('./../../../spec_helper', __FILE__))
+require 'mocha'
 
 describe CPSMS::SMS do
 
@@ -26,6 +27,14 @@ describe CPSMS::SMS do
 
     it "must have a send! method" do
       CPSMS::SMS.must_respond_to :send!
+    end
+
+    it "passes on the sender option to the API" do
+      CPSMS::SMS.expects(:parse_response) { nil }
+      CPSMS::SMS.expects(:post).with() do |path, options|
+        options[:body][:sender] == "foobar"
+      end.returns( stub(:body) )
+      CPSMS::SMS.send!(username, password, recipient, "test", { :sender => "foobar" })
     end
 
     describe "with invalid credentials" do
