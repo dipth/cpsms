@@ -34,4 +34,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency('turn',           '~> 0.9.3')
   s.add_development_dependency('rake',           '~> 0.9.2')
   s.add_development_dependency('guard-minitest', '~> 0.4.0')
+  s.add_development_dependency('mocha',          '~> 0.10.5')
 end

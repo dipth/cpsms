@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cpsms (0.1.1)
+    cpsms (0.1.2)
       httparty (~> 0.8.1)
       libxml-ruby (~> 2.2.2)
 
@@ -22,7 +22,10 @@ GEM
       multi_json
       multi_xml
     libxml-ruby (2.2.2)
+    metaclass (0.0.1)
     minitest (2.11.2)
+    mocha (0.10.5)
+      metaclass (~> 0.0.1)
     multi_json (1.1.0)
     multi_xml (0.4.1)
     rake (0.9.2.2)
@@ -42,6 +45,7 @@ DEPENDENCIES
   cpsms!
   guard-minitest (~> 0.4.0)
   minitest (~> 2.11.2)
+  mocha (~> 0.10.5)
   rake (~> 0.9.2)
   turn (~> 0.9.3)
   vcr (~> 2.0.0.rc1)
