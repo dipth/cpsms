@@ -14,6 +14,8 @@ module CPSMS
                :message => message }
 
       body[:sender] = options[:sender] if options[:sender]
+      body[:utf8] = "1" if options[:utf8] == true
+
       parse_response self.post('/sms/', :body => body).body
     end
 

@@ -37,6 +37,14 @@ describe CPSMS::SMS do
       CPSMS::SMS.send!(username, password, recipient, "test", { :sender => "foobar" })
     end
 
+    it "passes on the utf8 option to the API" do
+      CPSMS::SMS.expects(:parse_response) { nil }
+      CPSMS::SMS.expects(:post).with() do |path, options|
+        options[:body][:utf8] == "1"
+      end.returns( stub(:body) )
+      CPSMS::SMS.send!(username, password, recipient, "test", { :utf8 => true })
+    end
+
     describe "with invalid credentials" do
       it "raises a CPSMS::InvalidCredentialsError" do
         proc do
