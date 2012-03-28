@@ -29,12 +29,12 @@ describe CPSMS::SMS do
       CPSMS::SMS.must_respond_to :send!
     end
 
-    it "passes on the sender option to the API" do
+    it "passes on the from option to the API" do
       CPSMS::SMS.expects(:parse_response) { nil }
       CPSMS::SMS.expects(:post).with() do |path, options|
-        options[:body][:sender] == "foobar"
+        options[:body][:from] == "foobar"
       end.returns( stub(:body) )
-      CPSMS::SMS.send!(username, password, recipient, "test", { :sender => "foobar" })
+      CPSMS::SMS.send!(username, password, recipient, "test", { :from => "foobar" })
     end
 
     it "passes on the utf8 option to the API" do
