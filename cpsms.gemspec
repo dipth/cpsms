@@ -29,8 +29,8 @@ Gem::Specification.new do |s|
   end
 
   s.add_development_dependency('minitest',       '~> 2.11.2')
-  s.add_development_dependency('webmock',        '~> 1.7.10')
-  s.add_development_dependency('vcr',            '~> 2.0.0.rc1')
+  s.add_development_dependency('webmock',        '~> 1.20.4')
+  s.add_development_dependency('vcr',            '~> 2.9.3')
   s.add_development_dependency('turn',           '~> 0.9.3')
   s.add_development_dependency('rake',           '~> 0.9.2')
   s.add_development_dependency('guard-minitest', '~> 0.4.0')
