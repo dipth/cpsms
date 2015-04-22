@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
+  s.required_ruby_version = '>= 1.9.3'
+
   s.add_dependency('httparty',      '>= 0.10.2')
 
   case RUBY_PLATFORM
