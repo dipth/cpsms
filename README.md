@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/cpsms.svg)](http://badge.fury.io/rb/cpsms)
 [![Build Status](https://circleci.com/gh/gfish/cpsms/tree/master.svg?style=shield)](https://circleci.com/gh/gfish/cpsms/tree/master)
 
 # CPSMS
