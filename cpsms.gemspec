@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
     s.add_dependency('libxml-jruby',  '>= 1.0.0')
     s.add_dependency('jruby-openssl', '>= 0.7.6')
   else
-    s.add_dependency('libxml-ruby',   '>= 2.6.0')
+    s.add_dependency('libxml-ruby',   '>= 2.9.0')
   end
 
   s.add_development_dependency('minitest',       '~> 2.11.2')
